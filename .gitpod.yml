@@ -4,6 +4,7 @@ tasks:
   - name: Install asdf .tool-versions
     init: |
       asdf install
+      gp sync-done asdf-ready
   - name: Start docker-compose
     init: |
       docker-compose pull
@@ -11,6 +12,7 @@ tasks:
       docker-compose up -d
   - name: Compile app
     init: |
+      gp sync-await asdf-ready
       mix deps.get
       MIX_ENV=test mix compile
       MIX_ENV=prod mix compile
