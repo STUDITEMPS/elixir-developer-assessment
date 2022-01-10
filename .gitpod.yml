@@ -1,0 +1,16 @@
+image:
+  file: gitpod/Dockerfile
+tasks:
+  - name: Install asdf .tool-versions
+    init: |
+      asdf install
+  - name: Start docker-compose
+    init: |
+      docker-compose pull
+    command: |
+      docker-compose up -d
+vscode:
+  extensions:
+    - elixir-lsp.elixir-ls
+    - eamodio.gitlens
+    - ms-azuretools.vscode-docker

@@ -1,0 +1,10 @@
+version: '3'
+services:
+  rabbitmq:
+    image: rabbitmq:3.9.12
+    ports:
+      - 5672:5672
+  postgres:
+    image: postgres:14.1
+    ports:
+      - 5432:5432
