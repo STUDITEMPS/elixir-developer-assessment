@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# activate asdf
-. $HOME/.asdf/asdf.sh
-
 # install and pin erlang: https://github.com/asdf-vm/asdf-erlang
 asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
 asdf plugin update erlang c215f6b18b8f11debd097e700f62b5da62860419
