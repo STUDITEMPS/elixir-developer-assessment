@@ -5,6 +5,10 @@ services:
     ports:
       - 5672:5672
   postgres:
+    # Ohne eigenen Wert wird die Shell-Environment übernommen.
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     image: postgres:14.1
     ports:
       - 5432:5432
