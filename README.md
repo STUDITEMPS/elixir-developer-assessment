@@ -1,19 +1,7 @@
-# Billing
+# Young Professionals Email Service
 
-To start your Phoenix server:
-
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
-
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+The Jobmensa API (https://randomuser.me/api/?seed=jobmensa&results=25) provides an unordered list of graduates to other services.
+We want to import and store those graduates into our new Young Professionals email service.
+Sadly our legal team requires us to not send more than 100 initial offers at a day due to the risk of incoming fees.
+Those below the age of 25 should receive a "Get your first job!"-Email,
+while those 25 or above should receive a "Next step in your career"-Email.
