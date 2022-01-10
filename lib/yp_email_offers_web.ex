@@ -1,12 +1,12 @@
-defmodule BillingWeb do
+defmodule YPEmailOffersWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use BillingWeb, :controller
-      use BillingWeb, :view
+      use YPEmailOffersWeb, :controller
+      use YPEmailOffersWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule BillingWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: BillingWeb
+      use Phoenix.Controller, namespace: YPEmailOffersWeb
 
       import Plug.Conn
-      import BillingWeb.Gettext
-      alias BillingWeb.Router.Helpers, as: Routes
+      import YPEmailOffersWeb.Gettext
+      alias YPEmailOffersWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/billing_web/templates",
-        namespace: BillingWeb
+        root: "lib/yp_email_offers_web/templates",
+        namespace: YPEmailOffersWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -45,7 +45,7 @@ defmodule BillingWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {BillingWeb.LayoutView, "live.html"}
+        layout: {YPEmailOffersWeb.LayoutView, "live.html"}
 
       unquote(view_helpers())
     end
@@ -80,7 +80,7 @@ defmodule BillingWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import BillingWeb.Gettext
+      import YPEmailOffersWeb.Gettext
     end
   end
 
@@ -95,9 +95,9 @@ defmodule BillingWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import BillingWeb.ErrorHelpers
-      import BillingWeb.Gettext
-      alias BillingWeb.Router.Helpers, as: Routes
+      import YPEmailOffersWeb.ErrorHelpers
+      import YPEmailOffersWeb.Gettext
+      alias YPEmailOffersWeb.Router.Helpers, as: Routes
     end
   end
 

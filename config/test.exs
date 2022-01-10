@@ -5,23 +5,23 @@ import Config
 # The MIX_TEST_PARTITION environment variable can be used
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
-config :billing, Billing.Repo,
+config :yp_email_offers, YPEmailOffers.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "billing_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "yp_email_offers_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :billing, BillingWeb.Endpoint,
+config :yp_email_offers, YPEmailOffersWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "PT8+h/bzebMlTdcmQjh69vJ0cyVbgWKeFpEyjNrQKnDAcP8xCPlrskxvJytAxkF4",
+  secret_key_base: "QNUVuQIC6t09msVUJKE/pdDWYjN0F4rwngqF34E6Se0dj+DD150r8I3/9H2rke1L",
   server: false
 
 # In test we don't send emails.
-config :billing, Billing.Mailer, adapter: Swoosh.Adapters.Test
+config :yp_email_offers, YPEmailOffers.Mailer, adapter: Swoosh.Adapters.Test
 
 # Print only warnings and errors during test
 config :logger, level: :warn

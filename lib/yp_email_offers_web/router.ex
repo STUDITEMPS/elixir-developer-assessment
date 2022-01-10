@@ -1,11 +1,11 @@
-defmodule BillingWeb.Router do
-  use BillingWeb, :router
+defmodule YPEmailOffersWeb.Router do
+  use YPEmailOffersWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, {BillingWeb.LayoutView, :root}
+    plug :put_root_layout, {YPEmailOffersWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -14,14 +14,14 @@ defmodule BillingWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", BillingWeb do
+  scope "/", YPEmailOffersWeb do
     pipe_through :browser
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", BillingWeb do
+  # scope "/api", YPEmailOffersWeb do
   #   pipe_through :api
   # end
 
@@ -38,7 +38,7 @@ defmodule BillingWeb.Router do
     scope "/" do
       pipe_through :browser
 
-      live_dashboard "/dashboard", metrics: BillingWeb.Telemetry
+      live_dashboard "/dashboard", metrics: YPEmailOffersWeb.Telemetry
     end
   end
 

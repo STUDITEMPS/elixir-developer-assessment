@@ -1,13 +1,13 @@
-defmodule BillingWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :billing
+defmodule YPEmailOffersWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :yp_email_offers
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_billing_key",
-    signing_salt: "90HlIuy4"
+    key: "_yp_email_offers_key",
+    signing_salt: "IJXgfdHT"
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
@@ -18,7 +18,7 @@ defmodule BillingWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :billing,
+    from: :yp_email_offers,
     gzip: false,
     only: ~w(assets fonts images favicon.ico robots.txt)
 
@@ -28,7 +28,7 @@ defmodule BillingWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :billing
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :yp_email_offers
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -46,5 +46,5 @@ defmodule BillingWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug BillingWeb.Router
+  plug YPEmailOffersWeb.Router
 end

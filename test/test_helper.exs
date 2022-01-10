@@ -1,2 +1,2 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(Billing.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(YPEmailOffers.Repo, :manual)

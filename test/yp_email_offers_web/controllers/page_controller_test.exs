@@ -1,5 +1,5 @@
-defmodule BillingWeb.PageControllerTest do
-  use BillingWeb.ConnCase
+defmodule YPEmailOffersWeb.PageControllerTest do
+  use YPEmailOffersWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")

@@ -1,11 +1,11 @@
-defmodule BillingWeb.Gettext do
+defmodule YPEmailOffersWeb.Gettext do
   @moduledoc """
   A module providing Internationalization with a gettext-based API.
 
   By using [Gettext](https://hexdocs.pm/gettext),
   your module gains a set of macros for translations, for example:
 
-      import BillingWeb.Gettext
+      import YPEmailOffersWeb.Gettext
 
       # Simple translation
       gettext("Here is the string to translate")
@@ -20,5 +20,5 @@ defmodule BillingWeb.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :billing
+  use Gettext, otp_app: :yp_email_offers
 end

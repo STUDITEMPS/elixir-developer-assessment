@@ -5,7 +5,7 @@
 # Inside the script, you can read and write to any of your
 # repositories directly:
 #
-#     Billing.Repo.insert!(%Billing.SomeSchema{})
+#     YPEmailOffers.Repo.insert!(%YPEmailOffers.SomeSchema{})
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.

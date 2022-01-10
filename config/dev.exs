@@ -1,11 +1,11 @@
 import Config
 
 # Configure your database
-config :billing, Billing.Repo,
+config :yp_email_offers, YPEmailOffers.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "billing_dev",
+  database: "yp_email_offers_dev",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
@@ -15,14 +15,14 @@ config :billing, Billing.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with esbuild to bundle .js and .css sources.
-config :billing, BillingWeb.Endpoint,
+config :yp_email_offers, YPEmailOffersWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "hzGGC5zvm9SahNh/NUBy2Cqvgg3aODnhIBKQBUyWzqxkBmRGmZ+A9ZK3FA1QazzN",
+  secret_key_base: "3WZAveNUYFNCWigVd7ds9Ap0iNGvQkU/78gHUNk3DpBj4UNs7S6dsKPDj5uNzejC",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
@@ -53,13 +53,13 @@ config :billing, BillingWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :billing, BillingWeb.Endpoint,
+config :yp_email_offers, YPEmailOffersWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/billing_web/(live|views)/.*(ex)$",
-      ~r"lib/billing_web/templates/.*(eex)$"
+      ~r"lib/yp_email_offers_web/(live|views)/.*(ex)$",
+      ~r"lib/yp_email_offers_web/templates/.*(eex)$"
     ]
   ]
 

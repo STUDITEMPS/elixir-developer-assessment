@@ -1,4 +1,4 @@
-defmodule Billing.Application do
+defmodule YPEmailOffers.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,20 +9,20 @@ defmodule Billing.Application do
   def start(_type, _args) do
     children = [
       # Start the Ecto repository
-      Billing.Repo,
+      YPEmailOffers.Repo,
       # Start the Telemetry supervisor
-      BillingWeb.Telemetry,
+      YPEmailOffersWeb.Telemetry,
       # Start the PubSub system
-      {Phoenix.PubSub, name: Billing.PubSub},
+      {Phoenix.PubSub, name: YPEmailOffers.PubSub},
       # Start the Endpoint (http/https)
-      BillingWeb.Endpoint
-      # Start a worker by calling: Billing.Worker.start_link(arg)
-      # {Billing.Worker, arg}
+      YPEmailOffersWeb.Endpoint
+      # Start a worker by calling: YPEmailOffers.Worker.start_link(arg)
+      # {YPEmailOffers.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Billing.Supervisor]
+    opts = [strategy: :one_for_one, name: YPEmailOffers.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
@@ -30,7 +30,7 @@ defmodule Billing.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    BillingWeb.Endpoint.config_change(changed, removed)
+    YPEmailOffersWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

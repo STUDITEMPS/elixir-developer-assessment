@@ -1,5 +1,5 @@
-defmodule BillingWeb.ErrorView do
-  use BillingWeb, :view
+defmodule YPEmailOffersWeb.ErrorView do
+  use YPEmailOffersWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

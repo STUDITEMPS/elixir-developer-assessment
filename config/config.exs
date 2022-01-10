@@ -7,16 +7,17 @@
 # General application configuration
 import Config
 
-config :billing,
-  ecto_repos: [Billing.Repo],
+config :yp_email_offers,
+  namespace: YPEmailOffers,
+  ecto_repos: [YPEmailOffers.Repo],
   generators: [binary_id: true]
 
 # Configures the endpoint
-config :billing, BillingWeb.Endpoint,
+config :yp_email_offers, YPEmailOffersWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: BillingWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: Billing.PubSub,
-  live_view: [signing_salt: "OCkzyiNm"]
+  render_errors: [view: YPEmailOffersWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: YPEmailOffers.PubSub,
+  live_view: [signing_salt: "Z2CUE3Eu"]
 
 # Configures the mailer
 #
@@ -25,7 +26,7 @@ config :billing, BillingWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :billing, Billing.Mailer, adapter: Swoosh.Adapters.Local
+config :yp_email_offers, YPEmailOffers.Mailer, adapter: Swoosh.Adapters.Local
 
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false
