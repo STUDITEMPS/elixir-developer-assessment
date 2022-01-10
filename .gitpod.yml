@@ -14,6 +14,7 @@ tasks:
     init: |
       gp sync-await asdf-ready
       mix local.hex --force
+      mix local.rebar --force
       mix deps.get
       MIX_ENV=test mix compile
       MIX_ENV=prod mix compile
