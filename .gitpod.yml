@@ -1,25 +1,17 @@
 image:
   file: gitpod/Dockerfile
 tasks:
-  - name: Install asdf .tool-versions
+  - name: Setup project
     init: |
       asdf install
-      gp sync-done asdf-ready
-  - name: Start docker-compose
-    init: |
-      docker-compose pull
-    command: |
-      docker-compose up -d
-  - name: Compile app
-    init: |
-      gp sync-await asdf-ready
       mix local.hex --force
       mix local.rebar --force
       mix deps.get
       MIX_ENV=test mix compile
       MIX_ENV=prod mix compile
+      docker-compose pull
     command: |
-      iex -S mix phx.server
+      docker-compose up -d
 vscode:
   extensions:
     - elixir-lsp.elixir-ls
