@@ -1,9 +1,5 @@
 version: '3'
 services:
-  rabbitmq:
-    image: rabbitmq:3.9.12
-    ports:
-      - 5672:5672
   postgres:
     # Ohne eigenen Wert wird die Shell-Environment übernommen.
     environment:
