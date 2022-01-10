@@ -27,8 +27,9 @@ ARG ASDF_VERSION=v0.9.0
 
 # setup asdf-vm: https://asdf-vm.com/guide/getting-started.html
 RUN git clone --depth 1 https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch ${ASDF_VERSION} && \
-    echo '. $HOME/.asdf/asdf.sh' >> $HOME/.bashrc && \
-    echo '. $HOME/.asdf/asdf.sh' >> $HOME/.profile
+    echo 'export ASDF_DATA_DIR="/workspace/elixir-developer-assessment/.data/asdf' >> $HOME/.bashrc && \
+    echo 'export MIX_HOME="/workspace/elixir-developer-assessment/.data/mix' >> $HOME/.bashrc && \
+    echo '. $HOME/.asdf/asdf.sh' >> $HOME/.bashrc
 
 # install asdf plugins
 COPY gitpod/install-asdf-plugins.sh $HOME/

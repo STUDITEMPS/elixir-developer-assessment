@@ -32,3 +32,5 @@ yp_email_offers-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Location for asdf und mix
+.data

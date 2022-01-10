@@ -3,6 +3,8 @@ image:
 tasks:
   - name: Setup project
     init: |
+      echo $ASDF_DATA_DIR
+      echo $MIX_HOME
       asdf install
       mix local.hex --force
       mix local.rebar --force
