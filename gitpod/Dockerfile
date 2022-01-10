@@ -17,6 +17,9 @@ RUN curl -o /usr/bin/slirp4netns -fsSL https://github.com/rootless-containers/sl
 RUN curl -o /usr/local/bin/docker-compose -fsSL https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64 \
     && chmod +x /usr/local/bin/docker-compose
 
+# get inotify-tools for live reload from phoenix
+RUN install-packages inotify-tools
+
 # user is gitpod by default but who knows that
 USER gitpod
 
