@@ -20,3 +20,8 @@ vscode:
     - elixir-lsp.elixir-ls
     - eamodio.gitlens
     - ms-azuretools.vscode-docker
+ports:
+  - port: 4000
+    onOpen: open-preview
+  - port: 5432
+    onOpen: ignore
