@@ -12,9 +12,9 @@ tasks:
       MIX_ENV=test mix compile
       docker compose pull
     command: |
-      docker compose up
+      docker compose up --wait
       mix ecto.setup
-      mix phx.server
+      iex -S mix phx.server
 vscode:
   extensions:
     - elixir-lsp.elixir-ls
