@@ -3,6 +3,9 @@ FROM gitpod/workspace-base:commit-f2d623ca9d270c2ce8560d2ca0f9ce71b105aff2
 
 # install docker & docker-compose, stolen from gitpod/workspace-full
 USER root
+
+ARG DOCKER_COMPOSE_VERSION=v2.2.2
+
 # Dazzle does not rebuild a layer until one of its lines are changed. Increase this counter to rebuild this layer.
 ENV TRIGGER_REBUILD=0
 # https://docs.docker.com/engine/install/ubuntu/
@@ -14,8 +17,9 @@ RUN curl -o /var/lib/apt/dazzle-marks/docker.gpg -fsSL https://download.docker.c
 RUN curl -o /usr/bin/slirp4netns -fsSL https://github.com/rootless-containers/slirp4netns/releases/download/v1.1.12/slirp4netns-$(uname -m) \
     && chmod +x /usr/bin/slirp4netns
 
-RUN curl -o /usr/local/bin/docker-compose -fsSL https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64 \
-    && chmod +x /usr/local/bin/docker-compose
+RUN mkdir -p /usr/local/lib/docker/cli-plugins \
+    && curl -o /usr/local/lib/docker/cli-plugins/docker-compose -fsSL https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-linux-x86_64 \
+    && chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 
 # get inotify-tools for live reload from phoenix
 RUN install-packages inotify-tools
