@@ -3,8 +3,6 @@ image:
 tasks:
   - name: Setup project
     init: |
-      sh gitpod/install-asdf-plugins.sh
-      asdf install
       mix local.hex --force
       mix local.rebar --force
       mix deps.get
