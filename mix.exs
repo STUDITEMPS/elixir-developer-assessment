@@ -47,8 +47,13 @@ defmodule YPEmailOffers.MixProject do
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
-      {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      # The flexible HTTP client library for Elixir
+      {:tesla, "~> 1.4"},
+      # simple HTTP client in Erlang, recommended adapter for tesla
+      {:hackney, "~> 1.18"},
+      # A blazing fast JSON parser and generator in pure Elixir
+      {:jason, "~> 1.3"}
     ]
   end
 
