@@ -33,11 +33,8 @@ ARG ASDF_VERSION=v0.9.0
 RUN git clone --depth 1 https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch ${ASDF_VERSION} \
     && echo '. $HOME/.asdf/asdf.sh' >> $HOME/.bashrc
 
-ENV ASDF_ERLANG_VERSION=24.2
-ENV ASDF_ELIXIR_VERSION=1.13.1
-ENV ASDF_NODEJS_VERSION=16.13.1
-
 # install asdf plugins
+COPY .tool-versions $HOME/
 COPY gitpod/install-asdf-plugins.sh $HOME/
 RUN $HOME/install-asdf-plugins.sh \
     && rm $HOME/install-asdf-plugins.sh
@@ -45,4 +42,4 @@ RUN $HOME/install-asdf-plugins.sh \
 # install hex and rebar
 COPY gitpod/install-mix-tooling.sh $HOME/
 RUN $HOME/install-mix-tooling.sh \
-    && rm $HOME/install-mix-tooling.sh
+    && rm $HOME/install-mix-tooling.sh $HOME/.tool-versions
