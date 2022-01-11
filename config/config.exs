@@ -60,7 +60,8 @@ config :tesla, adapter: Tesla.Adapter.Hackney
 config :yp_email_offers, Oban,
   repo: YPEmailOffers.Repo,
   timezone: "Europe/Berlin"
-  # plugins: [{Oban.Plugins.Cron, crontab: []}]
+
+# plugins: [{Oban.Plugins.Cron, crontab: []}]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
