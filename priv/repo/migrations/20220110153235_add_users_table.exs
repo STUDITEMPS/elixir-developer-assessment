@@ -9,6 +9,8 @@ defmodule YPEmailOffers.Repo.Migrations.AddUsersTable do
       add :firstname, :string, null: false
       add :lastname, :string, null: false
       add :date_of_birth, :date, null: false
+
+      timestamps()
     end
   end
 end
