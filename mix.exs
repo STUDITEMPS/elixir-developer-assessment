@@ -53,7 +53,9 @@ defmodule YPEmailOffers.MixProject do
       # simple HTTP client in Erlang, recommended adapter for tesla
       {:hackney, "~> 1.18"},
       # A blazing fast JSON parser and generator in pure Elixir
-      {:jason, "~> 1.3"}
+      {:jason, "~> 1.3"},
+      # Robust job processing in Elixir
+      {:oban, "~> 2.10"}
     ]
   end
 
