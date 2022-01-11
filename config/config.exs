@@ -12,6 +12,10 @@ config :yp_email_offers,
   ecto_repos: [YPEmailOffers.Repo],
   generators: [binary_id: true]
 
+config :yp_email_offers, YPEmailOffers.Repo,
+  migration_primary_key: [name: :id, type: :binary_id],
+  migration_foreign_key: [column: :id, type: :binary_id]
+
 # Configures the endpoint
 config :yp_email_offers, YPEmailOffersWeb.Endpoint,
   url: [host: "localhost"],
