@@ -3,8 +3,6 @@ image:
 tasks:
   - name: Setup project
     init: |
-      mix local.hex --force
-      mix local.rebar --force
       mix deps.get
       MIX_ENV=dev mix compile
       MIX_ENV=test mix compile

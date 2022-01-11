@@ -27,17 +27,11 @@ RUN install-packages inotify-tools
 # user is gitpod by default but who knows that
 USER gitpod
 
-# place asdf and mix inside workspace so their artifacts are persisted by prebuilds
-ARG ASDF_DATA_DIR_ARG="/workspace/asdf"
-ENV ASDF_DATA_DIR=${ASDF_DATA_DIR_ARG}
-ARG MIX_HOME_ARG="/workspace/mix"
-ENV MIX_HOME=${MIX_HOME_ARG}
-
 ARG ASDF_VERSION=v0.9.0
 
 # setup asdf-vm: https://asdf-vm.com/guide/getting-started.html
-RUN git clone --depth 1 https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch ${ASDF_VERSION} && \
-    echo '. $HOME/.asdf/asdf.sh' >> $HOME/.bashrc
+RUN git clone --depth 1 https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch ${ASDF_VERSION} \
+    && echo '. $HOME/.asdf/asdf.sh' >> $HOME/.bashrc
 
 ENV ASDF_ERLANG_VERSION=24.2
 ENV ASDF_ELIXIR_VERSION=1.13.1
@@ -45,5 +39,10 @@ ENV ASDF_NODEJS_VERSION=16.13.1
 
 # install asdf plugins
 COPY gitpod/install-asdf-plugins.sh $HOME/
-RUN $HOME/install-asdf-plugins.sh && \
-    rm $HOME/install-asdf-plugins.sh
+RUN $HOME/install-asdf-plugins.sh \
+    && rm $HOME/install-asdf-plugins.sh
+
+# install hex and rebar
+COPY gitpod/install-mix-tooling.sh $HOME/
+RUN $HOME/install-mix-tooling.sh \
+    && rm $HOME/install-mix-tooling.sh
