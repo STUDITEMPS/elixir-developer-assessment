@@ -1,8 +1,8 @@
-defmodule YPEmailOffers.Repo.Migrations.AddUsersTable do
+defmodule YPEmailOffers.Repo.Migrations.AddGraduatesTable do
   use Ecto.Migration
 
   def change do
-    create table("users") do
+    create table("graduates") do
       add :external_id, :uuid, null: false
       add :email, :string, null: false
       add :salutation, :string
