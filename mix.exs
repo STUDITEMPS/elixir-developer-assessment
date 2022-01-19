@@ -56,7 +56,8 @@ defmodule YPEmailOffers.MixProject do
       # A blazing fast JSON parser and generator in pure Elixir
       {:jason, "~> 1.3"},
       # Robust job processing in Elixir
-      {:oban, "~> 2.10"}
+      {:oban, "~> 2.10"},
+      {:tix, "~> 0.4", only: [:dev, :test], runtime: false}
     ]
   end
 
