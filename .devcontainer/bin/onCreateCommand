@@ -8,5 +8,5 @@ sudo install-mix-tooling
 
 # prepare application
 mix deps.get
-MIX_ENV=dev mix ecto.setup
-MIX_ENV=test mix ecto.setup
+MIX_ENV=dev mix do deps.compile + ecto.setup
+MIX_ENV=test mix do deps.compile + ecto.setup

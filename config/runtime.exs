@@ -12,6 +12,16 @@ if System.get_env("PHX_SERVER") && System.get_env("RELEASE_NAME") do
   config :yp_email_offers, YPEmailOffersWeb.Endpoint, server: true
 end
 
+if config_env() in [:dev, :test] do
+  config :yp_email_offers,
+         YPEmailOffers.Repo,
+         username: System.get_env("PG_USER") || "postgres",
+         password: System.get_env("PG_PASSWORD") || "postgres",
+         port: System.get_env("PG_PORT") || "5432",
+         hostname: System.get_env("PG_HOST") || "localhost",
+         database: System.get_env("PG_NAME") || "yp_email_offers_#{config_env()}"
+end
+
 if config_env() == :prod do
   database_url =
     System.get_env("DATABASE_URL") ||
