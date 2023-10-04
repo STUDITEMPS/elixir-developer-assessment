@@ -8,6 +8,7 @@ defmodule YPEmailOffers.GraduatesClientTest do
   describe "graduates/1" do
     test "" do
       response_body = File.read!("test/fixtures/graduates.json")
+
       mock(fn
         %{method: :get, url: "https://randomuser.me/api/" <> _} ->
           %Tesla.Env{status: 200, body: response_body}
