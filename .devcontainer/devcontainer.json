@@ -1,0 +1,20 @@
+{
+    "name": "Elixir Developer Assessment",
+    "dockerComposeFile": [
+        "../docker-compose.yml",
+        "docker-compose.yml"
+    ],
+    "service": "devcontainer",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "codespaces": {
+            "repositories": {
+                "STUDITEMPS/devcontainer-base": {
+                    "permissions": {
+                        "packages": "read"
+                    }
+                }
+            }
+        }
+    }
+}

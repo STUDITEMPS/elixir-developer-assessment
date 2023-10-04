@@ -1,0 +1,12 @@
+#!/bin/bash -ieu
+
+# install from .tool-versions
+asdf install
+
+# install rebar and hex, present in base image
+sudo install-mix-tooling
+
+# prepare application
+mix deps.get
+MIX_ENV=dev mix ecto.setup
+MIX_ENV=test mix ecto.setup
