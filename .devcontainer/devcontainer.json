@@ -7,16 +7,5 @@
     "service": "devcontainer",
     "workspaceFolder": "/workspace",
     "onCreateCommand": ".devcontainer/bin/onCreateCommand",
-    "updateContentCommand": ".devcontainer/bin/updateContentCommand",
-    "customizations": {
-        "codespaces": {
-            "repositories": {
-                "STUDITEMPS/devcontainer-base": {
-                    "permissions": {
-                        "packages": "read"
-                    }
-                }
-            }
-        }
-    }
+    "updateContentCommand": ".devcontainer/bin/updateContentCommand"
 }
