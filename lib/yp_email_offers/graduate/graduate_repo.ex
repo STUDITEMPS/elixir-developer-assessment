@@ -4,6 +4,8 @@ defmodule YPEmailOffers.GraduateRepo do
   alias YPEmailOffers.Repo
   alias YPEmailOffers.Graduate
 
+  def all(), do: Repo.all(Graduate)
+
   def create_graduate(%{} = graduate) do
     %Graduate{}
     |> Graduate.changeset(graduate)
