@@ -7,14 +7,14 @@ defmodule YPEmailOffers.GraduatesClientTest do
 
   describe "graduates/1" do
     test "" do
-      response_body = File.read!("test/fixtures/graduates.json")
+      response_body = Jason.decode!(File.read!("test/fixtures/graduates.json"))
 
       mock(fn
         %{method: :get, url: "https://randomuser.me/api/" <> _} ->
           %Tesla.Env{status: 200, body: response_body}
       end)
 
-      assert {:ok, %{body: ^response_body}} = GraduatesClient.graduates()
+      assert response_body["results"] == GraduatesClient.graduates()
     end
   end
 end
